@@ -1,0 +1,31 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    margin: 10px auto;
+    width: 800px;
+    background-color: azure;
+    display: flex;
+    justify-content: space-between;
+}
+
+.registration{
+    padding: 15px;
+    display: flex;
+    flex-shrink: 1;
+}
+
+.login{
+    padding: 15px;
+    width: 150px;
+}
+
+.login input{
+    width: 120px
+}
+#login {
+    margin-top: 5px;
+    width:75px;
+} */

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Pick A Car {{user.first_name}} {{user.last_name}}!</h1>
+
+    <table>
+    <th>
+        <tr>
+            <td>Model</td>
+            <td>Year</td>
+            <td>Seller</td>
+            <td>Actions</td>
+        </tr>    
+    </th>
+    {% for car in cars %}
+        <tr>
+            <td>{{car.model}}</td>
+            <td>{{car.year}}</td>
+            <td>{{car.first_name}} {{car.last_name}}</td>
+            {% if car.sold == 1 %}
+            <td>SOLD</td>
+                {% elif car.user_id != session['user_id'] %}
+                    <td><a href="/view_car/{{car.id}}">View car</a></td>
+                {% elif car.user_id == session['user_id'] %}
+                    <td><a href=/edit_car_form/{{car.id}}>Edit</a>
+                    <a href="/delete_car/{{car.id}}">Delete</a></td>
+            {% endif %}
+        </tr>  
+        {% endfor %}
+    </table> 
+    
+    <a href="/add_car"><button>Add Car</button></a>
+    <a href="/logout"><button>Logout</button></a>
+    <a href="user_purchases"><button>Purchases</button></a>
+</body>
+</html>
